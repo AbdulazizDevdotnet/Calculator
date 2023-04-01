@@ -15,3 +15,33 @@ else
 {
     System.Console.WriteLine($"First number smaller than second number {firstNum} < {secondNum}");
 }
+System.Console.Write("Please input operation (+,-,*,/,%) : ");
+string operation = System.Console.ReadLine();
+switch(operation)
+{
+    case "+":
+        System.Console.WriteLine($"{firstNum} + {secondNum} = {firstNum + secondNum}");
+        break;
+    case "-":
+        System.Console.WriteLine($"{firstNum} - {secondNum} = {firstNum - secondNum}");
+        break;
+    case "*":
+        System.Console.WriteLine($"{firstNum} * {secondNum} = {firstNum * secondNum}");
+        break;
+    case "/":
+        if(secondNum == 0)
+        {
+            System.Console.WriteLine("0 (no'l) ga bo'lish mumkin emas!!!");
+        }
+        else
+        {
+            System.Console.WriteLine($"{firstNum} / {secondNum} = {firstNum / secondNum}");
+        }
+        break;
+    case "%":
+        System.Console.WriteLine($"{firstNum} % {secondNum} = {firstNum % secondNum}");
+        break;
+    default:
+        System.Console.WriteLine("Operation not found!!");
+        break;
+}
