@@ -45,3 +45,13 @@ switch(operation)
         System.Console.WriteLine("Operation not found!!");
         break;
 }
+System.Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+string result = operation switch 
+{
+    "+" => $"{firstNum} + {secondNum} = {firstNum + secondNum}",
+    "-" => $"{firstNum} - {secondNum} = {firstNum - secondNum}",
+    "*" => $"{firstNum} * {secondNum} = {firstNum * secondNum}",
+    "/" => secondNum == 0 ? "0 (no'l) ga bo'lish mumkin emas!!!" :$"{firstNum} / {secondNum} = {firstNum / secondNum}",
+    _   => "Operation not found!!"
+};
+System.Console.WriteLine(result);
