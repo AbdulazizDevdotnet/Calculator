@@ -55,3 +55,13 @@ string result = operation switch
     _   => "Operation not found!!"
 };
 System.Console.WriteLine(result);
+
+short counter=1;
+while(counter<=100)
+{
+    if(counter%2==0)
+    {
+        System.Console.WriteLine(counter);
+    }
+    counter++;
+}
