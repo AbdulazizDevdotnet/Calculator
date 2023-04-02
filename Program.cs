@@ -1,4 +1,16 @@
-﻿int firstNum,secondNum;
+﻿string password = "";
+System.Console.Write("Dasturdan foydalanish uchun iltimos parolni kiriting: ");
+password = System.Console.ReadLine();
+if(password != "Abdulaziz20")
+{
+    do
+    {
+        System.Console.Write("Xato parol\nParolni kiriting:");
+        password = System.Console.ReadLine();
+    }while(password != "Abdulaziz20");
+}
+System.Console.WriteLine("\tHey Welcome");
+int firstNum,secondNum;
 System.Console.Write("Please input first number: ");
 firstNum = System.Convert.ToInt32(System.Console.ReadLine());
 System.Console.Write("Please input second number: ");
@@ -64,4 +76,12 @@ while(counter<=100)
         System.Console.WriteLine(counter);
     }
     counter++;
+}
+for(int iteration = 1;iteration < 11; iteration++)
+{
+    for(int inIteration = 1;inIteration < 11;inIteration++)
+    {
+        System.Console.WriteLine($"{iteration} x {inIteration} = {iteration * inIteration}");
+    }
+    System.Console.WriteLine();
 }
