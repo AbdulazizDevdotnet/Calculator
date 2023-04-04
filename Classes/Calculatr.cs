@@ -46,14 +46,14 @@ namespace CALCULATOR.Classes
                 case "*":
                     return $"{FirstNumber} * {SecondNumber} = {FirstNumber * SecondNumber}";
                 case "/":
-                    if(SecondNumber == 0)
-                    {
-                        return ("0 (no'l) ga bo'lish mumkin emas!!!");
-                    }
-                    else
-                    {
+                    // if(SecondNumber == 0)
+                    // {
+                    //     return ("0 (no'l) ga bo'lish mumkin emas!!!");
+                    // }
+                    // else
+                    // {
                         return ($"{FirstNumber} / {SecondNumber} = {FirstNumber / SecondNumber}");
-                    }
+                    // }
                 case "%":
                     return ($"{FirstNumber} % {SecondNumber} = {FirstNumber % SecondNumber}");
                 default:
