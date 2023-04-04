@@ -1,87 +1,24 @@
-﻿string password = "";
-System.Console.Write("Dasturdan foydalanish uchun iltimos parolni kiriting: ");
-password = System.Console.ReadLine();
-if(password != "Abdulaziz20")
+﻿using System;
+using CALCULATOR.Classes;
+namespace CALCULATOR
 {
-    do
+    class Program
     {
-        System.Console.Write("Xato parol\nParolni kiriting:");
-        password = System.Console.ReadLine();
-    }while(password != "Abdulaziz20");
-}
-System.Console.WriteLine("\tHey Welcome");
-int firstNum,secondNum;
-System.Console.Write("Please input first number: ");
-firstNum = System.Convert.ToInt32(System.Console.ReadLine());
-System.Console.Write("Please input second number: ");
-secondNum = System.Convert.ToInt32(System.Console.ReadLine());
-if(firstNum > secondNum)
-{
-    System.Console.WriteLine($"First number bigger than second number {firstNum} > {secondNum}");
-}
-else if(firstNum == secondNum)
-{
-    System.Console.WriteLine($"First and second numbers equal {firstNum} = {secondNum}");
-}
-else
-{
-    System.Console.WriteLine($"First number smaller than second number {firstNum} < {secondNum}");
-}
-System.Console.Write("Please input operation (+,-,*,/,%) : ");
-string operation = System.Console.ReadLine();
-switch(operation)
-{
-    case "+":
-        System.Console.WriteLine($"{firstNum} + {secondNum} = {firstNum + secondNum}");
-        break;
-    case "-":
-        System.Console.WriteLine($"{firstNum} - {secondNum} = {firstNum - secondNum}");
-        break;
-    case "*":
-        System.Console.WriteLine($"{firstNum} * {secondNum} = {firstNum * secondNum}");
-        break;
-    case "/":
-        if(secondNum == 0)
+        static void Main()
         {
-            System.Console.WriteLine("0 (no'l) ga bo'lish mumkin emas!!!");
+            Security security = new Security();
+            Calculatr calculatr = new Calculatr();
+            security.CheckPassword();
+            calculatr.Greetings();
+            calculatr.GetInputs();
+            calculatr.CompareNumbers();
+            string calculateresult = calculatr.CalculateFirstMethod();
+            Console.WriteLine(calculateresult);
+            Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+            string calculateresult2 = calculatr.CalculateSecondMethod();
+            Console.WriteLine(calculateresult2);
+            calculatr.PrintEvenNumbers();
+            calculatr.PrintMultiplicationTable();
         }
-        else
-        {
-            System.Console.WriteLine($"{firstNum} / {secondNum} = {firstNum / secondNum}");
-        }
-        break;
-    case "%":
-        System.Console.WriteLine($"{firstNum} % {secondNum} = {firstNum % secondNum}");
-        break;
-    default:
-        System.Console.WriteLine("Operation not found!!");
-        break;
-}
-System.Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-string result = operation switch 
-{
-    "+" => $"{firstNum} + {secondNum} = {firstNum + secondNum}",
-    "-" => $"{firstNum} - {secondNum} = {firstNum - secondNum}",
-    "*" => $"{firstNum} * {secondNum} = {firstNum * secondNum}",
-    "/" => secondNum == 0 ? "0 (no'l) ga bo'lish mumkin emas!!!" :$"{firstNum} / {secondNum} = {firstNum / secondNum}",
-    _   => "Operation not found!!"
-};
-System.Console.WriteLine(result);
-
-short counter=1;
-while(counter<=100)
-{
-    if(counter%2==0)
-    {
-        System.Console.WriteLine(counter);
     }
-    counter++;
-}
-for(int iteration = 1;iteration < 11; iteration++)
-{
-    for(int inIteration = 1;inIteration < 11;inIteration++)
-    {
-        System.Console.WriteLine($"{iteration} x {inIteration} = {iteration * inIteration}");
-    }
-    System.Console.WriteLine();
 }
